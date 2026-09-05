@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: noose-unityrp
+    runtime: static
+    buildCommand: "true"
+    staticPublishPath: ./dist
+    autoDeployTrigger: "off"
