@@ -1,7 +1,8 @@
 services:
   - type: web
-    name: noose-unityrp
-    runtime: static
-    buildCommand: "true"
-    staticPublishPath: ./dist
-    autoDeployTrigger: "off"
+    name: noose-interne
+    runtime: node
+    branch: noose-interne
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    autoDeploy: true
