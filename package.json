@@ -11,6 +11,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "express": "^4.21.2",
     "lucide-react": "^0.469.0",
+    "pg": "^8.13.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5.7.2",
