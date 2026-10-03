@@ -1,7 +1,24 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+# Bring a durable PostgreSQL database; Free Render Postgres expires after 30 days.
 services:
   - type: web
-    name: noose-unityrp
-    runtime: static
-    buildCommand: "true"
-    staticPublishPath: ./dist
-    autoDeployTrigger: "off"
+    name: noose-services-civils
+    runtime: node
+    branch: noose-civil-portal
+    region: frankfurt
+    plan: free
+    buildCommand: npm ci --omit=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: MAIL_FROM
+        sync: false
